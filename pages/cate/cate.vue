@@ -1,5 +1,13 @@
 <template>
 	<view>
+		<!-- 使用自定义的搜索组件 -->
+		<!-- <my-search bgc="black" radius="10"></my-search> -->
+		<!-- 方法一 native -->
+		<!-- <my-search @click.native="gotoSearch"></my-search> -->
+		<!-- 方法二： this.$emit('click') -->
+		<my-search @click="gotoSearch"></my-search>
+
+
 		<view class="scroll-view-container">
 			<!-- 左侧滑动区 -->
 			<scroll-view scroll-y="true" style="height: 100vh;" class="scroll-left-view">
@@ -73,6 +81,12 @@
 			gotoGoodsList(item) {
 				uni.navigateTo({
 					url: '../../subpkg/goods_list/goods_list?cid=' + item.cat_id
+				})
+			},
+
+			gotoSearch() {
+				uni.navigateTo({
+					url: '../../subpkg/search/search'
 				})
 			}
 		}
