@@ -53,7 +53,10 @@
 	import {
 		$http
 	} from '@escook/request-miniprogram';
+	// 导入自己封装的mix模块
+	import bagdeMix from '../../mixins/tabbar-badge.js';
 	export default {
+		mixins: [bagdeMix],
 		data() {
 			return {
 				// 这是轮播图的数据列表
